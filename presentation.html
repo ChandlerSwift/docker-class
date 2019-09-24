@@ -66,8 +66,9 @@
 							<li>Disk/Memory/CPU efficiency</li>
 						</ul>
 						Similar to LXC, but many differences. <br>
-						Ecosystem, similar to RasPi: Not just the hardware, but a huuuuge community<br>
-						Minimalist: Mention Alpine
+						Ecosystem, similar to RasPi: Not just the hardware, but a huuuuge community. Docker hub has
+						lots of super neat things, but they're not all great.<br>
+						Minimalist: Mention Alpine (drawbacks: libc vs musl)
 					</aside>
 				</section>
 				<section>
@@ -85,8 +86,20 @@
 						<li class="fragment">A VM</li>
 						<li class="fragment"><a href="https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user">Secure against malicious docker users</a></a></li>
 					</ul>
-					<aside>
-
+					<aside class="notes">
+						Similar to a VM. What does a VM provide? Process isolation for independent processes,
+						dependencies, etc. But wait! The Linux kernel already provides all of that! Can we make use of
+						any of that?<br>
+						Different from a VM:
+						<ul>
+							<li>Shared kernel</li>
+							<li>Lighter weight</li>
+							<li>Disk/Memory/CPU efficiency</li>
+						</ul>
+						Similar to LXC, but many differences. <br>
+						Ecosystem, similar to RasPi: Not just the hardware, but a huuuuge community. Docker hub has
+						lots of super neat things, but they're not all great.<br>
+						Minimalist: Mention Alpine (drawbacks: libc vs musl)
 					</aside>
 				</section>
 				<section>
