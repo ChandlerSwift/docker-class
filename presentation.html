@@ -46,6 +46,11 @@
 							</ul>
 						</li>
 					</ul>
+					<aside class="notes">
+						Similar to a VM. What does a VM provide? Process isolation for independent processes,
+						dependencies, etc. But wait! The Linux kernel already provides all of that! Can we make use of
+						any of that?
+					</aside>
 					</section>
 					<section>
 						<h3>What is Docker?</h3>
@@ -58,17 +63,7 @@
 					<aside class="notes">
 						Similar to a VM. What does a VM provide? Process isolation for independent processes,
 						dependencies, etc. But wait! The Linux kernel already provides all of that! Can we make use of
-						any of that?<br>
-						Different from a VM:
-						<ul>
-							<li>Shared kernel</li>
-							<li>Lighter weight</li>
-							<li>Disk/Memory/CPU efficiency</li>
-						</ul>
-						Similar to LXC, but many differences. <br>
-						Ecosystem, similar to RasPi: Not just the hardware, but a huuuuge community. Docker hub has
-						lots of super neat things, but they're not all great.<br>
-						Minimalist: Mention Alpine (drawbacks: libc vs musl)
+						any of that?
 					</aside>
 				</section>
 				<section>
@@ -87,15 +82,6 @@
 						<li class="fragment"><a href="https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user">Secure against malicious docker users</a></a></li>
 					</ul>
 					<aside class="notes">
-						Similar to a VM. What does a VM provide? Process isolation for independent processes,
-						dependencies, etc. But wait! The Linux kernel already provides all of that! Can we make use of
-						any of that?<br>
-						Different from a VM:
-						<ul>
-							<li>Shared kernel</li>
-							<li>Lighter weight</li>
-							<li>Disk/Memory/CPU efficiency</li>
-						</ul>
 						Similar to LXC, but many differences. <br>
 						Ecosystem, similar to RasPi: Not just the hardware, but a huuuuge community. Docker hub has
 						lots of super neat things, but they're not all great.<br>
@@ -115,7 +101,8 @@
 				<section>
 					<h3>Neat software that uses Docker</h3>
 					<ul>
-						<li>Brandon's thing</li>
+						<li><a href="https://github.com/UMDLARS/dtanm">DTANM</a></li>
+						<li><a href="http://brandongeraci.com/#dockervnc">DDLS</a> (<a href="https://github.com/atr2600/DDLS">source</a>)</li>
 					</ul>
 				</section>
 				<section>
