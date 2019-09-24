@@ -30,7 +30,7 @@
 					<h3>Chandler Swift, UMD ACM</h3>
 					<a href="https://duluth.chandlerswift.com/docker/">https://duluth.chandlerswift.com/docker/</a>
 					<aside class="notes">
-						Intro: Name, year, major, interests
+						Intro: Name, year, major, interests<br>
 						I have a dedicated spot for questions at the end but I'm happy to have (constructive) questions at any time!
 					</aside>
 				</section>
@@ -42,13 +42,27 @@
 						<li class="fragment">Similar to a VM, sort of:
 							<ul>
 								<li class="fragment">A way to provide process isolation in a secure container</li>
+								<li class="fragment">Allows limiting of CPU/memory/disk/network/hardware</li>
 							</ul>
 						</li>
+						<li class="fragment">An ecosystem</li>
+						<li class="fragment">Minimalist, often</li>
 						<li class="fragment">Client-server architecture (<a href="https://docs.docker.com/engine/images/architecture.svg">here's a picture</a>)</li>
 						<li class="fragment">A new way of thinking?</li>
 					</ul>
-					<aside>
-
+					<aside class="notes">
+						Similar to a VM. What does a VM provide? Process isolation for independent processes,
+						dependencies, etc. But wait! The Linux kernel already provides all of that! Can we make use of
+						any of that?<br>
+						Different from a VM:
+						<ul>
+							<li>Shared kernel</li>
+							<li>Lighter weight</li>
+							<li>Disk/Memory/CPU efficiency</li>
+						</ul>
+						Similar to LXC, but many differences. <br>
+						Ecosystem, similar to RasPi: Not just the hardware, but a huuuuge community<br>
+						Minimalist: Mention Alpine
 					</aside>
 				</section>
 				<section>
@@ -58,11 +72,13 @@
 							<ul>
 								<li class="fragment">shared memory management</li>
 								<li class="fragment">a shared kernel</li>
+								<li class="fragment">Disk/Memory/CPU efficiency</li>
+								<li class="fragment">Shared filesystem</li>
 							</ul>
 						</li>
 						<li class="fragment">Nestable, necessarily (<a href="https://xkcd.com/1764/">relevant XKCD</a>)</li>
 						<li class="fragment">A VM</li>
-						<li class="fragment">Secure against malicious docker users</li>
+						<li class="fragment"><a href="https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user">Secure against malicious docker users</a></a></li>
 					</ul>
 					<aside>
 
