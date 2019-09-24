@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Arduinos!</title>
+		<title>Docker!</title>
 
 		<link rel="stylesheet" href="reveal-js/css/reset.css">
 		<link rel="stylesheet" href="reveal-js/css/reveal.css">
-		<link rel="stylesheet" href="reveal-js/css/theme/black.css">
+		<link rel="stylesheet" href="reveal-js/css/theme/serif.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="reveal-js/lib/css/monokai.css">
@@ -26,140 +26,88 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h1>Arduinos!</h1>
+					<h1>Docker!</h1>
 					<h3>Chandler Swift, UMD ACM</h3>
-					<a href="https://duluth.chandlerswift.com/arduino/">https://duluth.chandlerswift.com/arduino</a>
+					<a href="https://duluth.chandlerswift.com/docker/">https://duluth.chandlerswift.com/docker/</a>
+					<aside>
+						I have a dedicated spot for questions at the end but I'm happy to have (constructive) questions at any time!
+					</aside>
 				</section>
 				<section>
-					<h3>What is an Arduino?</h3>
+					<h3>What is Docker?</h3>
 					<ul>
-						<li>ATmega328p, ATmega32u4, &hellip;</li>
-						<li>Arduino.cc, SparkFun, Knockoffs, &hellip;</li>
-						<li>Programming community: ESP8266, ESP32, &hellip;</li>
-						<li>Focus on variety of I/O</li>
-						<li>Project Ideas: <a href="https://photos.app.goo.gl/MGPijddFZXVDUrBh9">videos</a>, <a href="https://blog.chandlerswift.com/">blog</a></li>
+						<li class="fragment">"A standardized unit of software" &mdash;docker.com</li>
+						<li class="fragment">"Docker provides a way to run applications securely isolated in a container, packaged with all its dependencies and libraries." &mdash;docs.docker.com</li>
+						<li class="fragment">Similar to a VM, sort of:
+							<ul>
+								<li class="fragment">A way to provide process isolation in a secure container</li>
+							</ul>
+						</li>
+						<li class="fragment">Client-server architecture (<a href="https://docs.docker.com/engine/images/architecture.svg">here's a picture</a>)</li>
+						<li class="fragment">A new way of thinking?</li>
 					</ul>
-				</section>
-				<section>
-					<h3>Raspberry Pi Comparison</h3>
-					<table>
-						<tr>
-							<th></th>
-							<th>Raspberry Pi</th>
-							<th>Arduino Nano</th>
-							<th>Arduino Pro Micro</th>
-							<th>ESP8266</th>
-						</tr>
-						<tr>
-							<th>Cost</th>
-							<td>$5-35+</td>
-							<td>$3-20</td>
-							<td>$3-20</td>
-							<td>$3-10</td>
-						</tr>
-						<tr>
-							<th>Power</th>
-							<td>2W (idle)</td>
-							<td>150mW<a href="http://www.home-automation-community.com/arduino-low-power-how-to-run-atmega328p-for-a-year-on-coin-cell-battery/">(1)</a></td>
-							<td>&lt;250mW</td>
-							<td>75-750mW</td>
-						</tr>
-						<tr><td colspan=5>Size, Speed, Connectivity, Reliability, Latency/Real-time, &hellip;</td></tr>
-					</table>
-				</section>
-				<section>
-					<h3>Where do I get parts?</h3>
-					<ul>
-						<li>Prices vary: <a href="https://www.sparkfun.com/products/12640">Official Pro Micro</a> vs <a href="https://www.aliexpress.com/item/New-Pro-Micro-for-arduino-ATmega32U4-5V-16MHz-Module-with-2-row-pin-header-For-Leonardo/32846843498.html">Knockoff</a></li>
-						<li>Amazon starter kits are pretty decent.</li>
-					</ul>
-				</section>
-				<section>
-					<h3>Hardware Primer</h3>
-					<ul>
-						<li>Button (Pullup vs floating, debounce)</li>
-						<li>LED and current regulation</li>
-						<li>Breadboards:</li>
-					</ul>
-					<img width=400 src="https://www.raspberrypi.org/magpi/wp-content/uploads/2017/01/Breadboard_Anno.jpeg">
-				</section>
-				<section>
-					<h3>Software Options</h3>
-					<ul>
-						<li><a href="https://www.arduino.cc/en/main/software">Arduino IDE</a></li>
-						<li>VS Code/Arduino IDE</li>
-						<li><a href="https://platformio.org/">PlatformIO</a> (/VS Code)</li>
-						<li><a href="http://fritzing.org/download/">Fritzing</a></li>
-						<li>avr-gcc and avrdude</li>
-						<li>Primarily C++, but also C, Python, Lua</li>
-					</ul>
-				</section>
-				<section>
-					<h3>Sample Software</h3>
-<pre><code class="hljs">
-void setup() {
-    // Setup goes here!
-    pinMode(2, OUTPUT);
-    pinMode(3, INPUT_PULLUP);
+					<aside>
 
-    // Initializing:
-    for (int i = 0; i < 5; i++) {
-        digitalWrite(2, HIGH);
-        delay(500);
-        digitalWrite(2, LOW);
-        delay(500);
-    }
-}
-void loop() {
-    digitalWrite(2, !digitalRead(3));
-}
+					</aside>
+				</section>
+				<section>
+					<h3>What <em>isn't</em> Docker?</h3>
+					<ul>
+						<li class="fragment">A virtual machine host
+							<ul>
+								<li class="fragment">shared memory management</li>
+								<li class="fragment">a shared kernel</li>
+							</ul>
+						</li>
+						<li class="fragment">Nestable, necessarily (<a href="https://xkcd.com/1764/">relevant XKCD</a>)</li>
+						<li class="fragment">A VM</li>
+						<li class="fragment">Secure against malicious docker users</li>
+					</ul>
+					<aside>
+
+					</aside>
+				</section>
+				<section>
+					<h3>Resources</h3>
+					<ul>
+						<li>docker.com</li>
+						<li>https://labs.play-with-docker.com/</li>
+						<li>https://github.com/veggiemonk/awesome-docker</li>
+						<li>https://hub.docker.com/</li>
+						<li>https://docs.docker.com/</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Neat software that uses Docker</h3>
+					<ul>
+						<li>Brandon's thing</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Dockerfiles</h3>
+<pre><code class="hljs"># Taken from https://github.com/umdlars/dtanm
+FROM python:3.7
+
+RUN pip install pipenv
+
+RUN mkdir /server
+WORKDIR /server
+
+COPY Pipfile Pipfile.lock /server/
+RUN pipenv install --deploy
+COPY web /server/web
+
+ENV FLASK_APP web
+ENV FLASK_ENV=development
+CMD ["pipenv", "run", "flask", "run", "--host=0.0.0.0"]
 </code></pre>
-(see also: <span style="font-family:monospace">blink.ino</span>)
-</section>
-<section>
-	<h3>Equivalently&hellip;</h3>
-<pre><code class="hljs">
-#include &lt;Arduino.h&gt;
-int main() {
-    // Setup goes here!
-    pinMode(2, OUTPUT);
-    pinMode(3, INPUT_PULLUP);
-
-    // Initializing:
-    for (int i = 0; i &lt; 5; i++) {
-        digitalWrite(2, HIGH);
-        delay(500);
-        digitalWrite(2, LOW);
-        delay(500);
-    }
-
-    while (true) (
-        digitalWrite(2, !digitalRead(3));
-    }
-}
-</code></pre>
-</section>
-<section>
-	<h3>Our project</h3>
-	<img src="images/circuit1.png">
-</section>
-<section>
-	<h3>Pseudocode</h3>
-		Set up I/O pins, and while true:
-		<ul>
-			<li>Wait for start button press</li>
-			<li>Wait random time (checking for false presses)</li>
-			<li>Turn on "go" light</li>
-			<li>Wait for the first player to press</li>
-			<li>Light up their LED</li>
-		</ul>
-	Sample/Docs at <a href="https://github.com/ChandlerSwift/ProgrammingMBDemo">github.com/ChandlerSwift/ProgrammingMBDemo</a>
-</section>
-<section>
-	<h3>Note on breadboard organization:</h3>
-	<img src="images/messy_breadboard.jpg">
-	<img src="images/neat_breadboard.jpg">
-</section>
+				</section>
+				<section>
+					<h3>Demos!</h3>
+				</section>
+				<section>
+					<h3>Q&A!</h3>
+				</section>
 			</div>
 		</div>
 
@@ -170,6 +118,10 @@ int main() {
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				fragmentInURL: true,
+				hash: true,
+				history: true,
+				//previewLinks: true, // Doesn't seem to currently work?
 				dependencies: [
 					{ src: 'reveal-js/plugin/markdown/marked.js' },
 					{ src: 'reveal-js/plugin/markdown/markdown.js' },
